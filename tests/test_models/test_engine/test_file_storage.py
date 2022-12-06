@@ -76,6 +76,11 @@ class test_fileStorage(unittest.TestCase):
         with self.assertRaises(ValueError):
             storage.reload()
 
+    def test_delete(self):
+        """ Checks delete method """
+        new = BaseModel()
+        storage.delete(new)
+
     def test_reload_from_nonexistent(self):
         """ Nothing happens if file does not exist """
         self.assertEqual(storage.reload(), None)
