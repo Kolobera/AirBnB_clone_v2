@@ -38,6 +38,10 @@ class FileStorage:
             del self.__objects[key]
             self.save()
 
+    def close(self):
+        """Call the reload method."""
+        self.reload()
+
     def reload(self):
         """Loads storage dictionary from file"""
         from models.base_model import BaseModel
